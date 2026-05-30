@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { SiteHeader } from "@/components/layout/site-header";
+import { AppProviders } from "@/components/providers/app-providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,10 +17,13 @@ export default function RootLayout({
     <html
       lang="ja"
       className="h-full antialiased"
-      suppressHydrationWarning
+      suppressHydrationWarning // サーバーとクライアントでDOM内容が異なっても警告出さない
     >
       <body className="flex min-h-full flex-col">
-        <main className="flex-1">{children}</main>
+        <AppProviders>
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+        </AppProviders>
       </body>
     </html>
   );
