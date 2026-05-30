@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThemeToggle } from "./theme-toggle";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -23,6 +24,7 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          <ThemeToggle />
         </nav>
       </div>
     </header>
