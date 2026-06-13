@@ -2,6 +2,7 @@
 
 import { useQuery } from "@tanstack/react-query";
 import { getUiItemBySlug } from "@/lib/api/ui-items";
+import { DemoPreview } from "@/features/demos/demo-preview";
 
 export function UiDetail({ slug }: { slug: string }) {
   const { data: item, error, isLoading } = useQuery({
@@ -28,12 +29,7 @@ export function UiDetail({ slug }: { slug: string }) {
       </div>
 
       <section className="rounded-lg border border-line bg-surface p-4">
-        <div className="flex min-h-80 items-center justify-center rounded-md bg-background p-8 text-center">
-          <div>
-            <p className="text-sm uppercase tracking-[0.24em] text-muted">Interactive Preview</p>
-            <p className="mt-3 text-2xl font-semibold">Demo component will be mounted here.</p>
-          </div>
-        </div>
+        <DemoPreview slug={item.slug} />
       </section>
 
       <div className="grid gap-5 md:grid-cols-3">
