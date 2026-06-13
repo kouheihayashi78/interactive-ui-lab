@@ -33,9 +33,9 @@ export default function Home() {
               </Link>
               <Link
                 className="inline-flex h-12 items-center justify-center rounded-md border border-line bg-surface px-5 text-sm font-medium transition hover:border-accent"
-                href="/about"
+                href="/playground"
               >
-                About Project
+                Open Playground
               </Link>
             </div>
           </div>
